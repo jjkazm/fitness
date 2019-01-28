@@ -8,7 +8,11 @@ gem 'haml', '~> 5.0', '>= 5.0.4'
 gem 'html2haml', '~> 2.2'
 
 # Use simple form
-gem 'simple_form' 
+gem 'simple_form'
+
+# Use bootstrap
+gem 'bootstrap', '~> 4.0.0'
+gem 'jquery-rails' 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
