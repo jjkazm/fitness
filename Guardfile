@@ -61,6 +61,7 @@ guard :rspec, cmd: "rspec" do
   # Added in order to look at the models, controllers and routes
   watch(%r{^app/models/(.+)\.rb$}) { |m| "spec/features/#{m[1]}s" }
   watch(%r{^app/controllers/(.+)_(controller)\.rb$}) { |m| "spec/features/#{m[1]}" }
+  watch(%r{^app/views/*}) { "spec/features/" }
   watch(rails.routes)          { "#{rspec.spec_dir}" }
 
   # Capybara features specs
