@@ -12,5 +12,9 @@ RSpec.feature 'Sign out' do
     click_link "Sign out"
 
     expect(page).to have_content("Signed out successfully.")
+    expect(page).to have_link("Signup")
+    expect(page).to have_link("Log in")
+    expect(page).not_to have_link("Sign out")
+    expect(page).not_to have_link("Signed in as")
   end
 end

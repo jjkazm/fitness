@@ -11,7 +11,11 @@ RSpec.feature 'Sign up user' do
       fill_in "Password confirmation", with: "haslo123"
 
       click_button "Signup"
-      
+
       expect(page).to have_content "Welcome! You have signed up successfully."
+      expect(page).not_to have_link("Signup")
+      expect(page).not_to have_link("Log in")
+      expect(page).to have_link("Sign out")
+      expect(page).to have_link("Signed in as kuba@wp.pl")
   end
 end
