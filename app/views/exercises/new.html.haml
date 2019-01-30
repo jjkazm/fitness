@@ -1,0 +1,9 @@
+.col-md-12
+  .text-center
+    %h2 New exercise
+    = simple_form_for(resource, as: resource_name, url: new_user_exercise_path(resource_name),  wrapper: :horizontal_form) do |f|
+      = f.error_notification
+      = f.input :email, input_html: { autocomplete: 'email' }
+      = f.input :password
+      = f.input :password_confirmation
+      = f.button :submit, "Signup", class: "btn-primary"
