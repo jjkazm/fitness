@@ -16,14 +16,16 @@ RSpec.feature 'Creating excercise' do
 
     fill_in "Duration", with: 70
     fill_in "Workout details", with: "Swimming"
-    fill_in "Activity date", with: "2019-01-30"
+    page.select '2018', from: 'exercise[workout_date(1i)]'
+    page.select 'December', from: 'exercise[workout_date(2i)]'
+    page.select '31', from: 'exercise[workout_date(3i)]'
 
     click_button "Create Exercise"
 
     expect(page).to have_content "Exercise has been created"
 
     exercise = Exercise.last
-    expect(current_path).to eq(user_path(@kuba, exercise))
+    expect(current_path).to eq(user_exercise_path(@kuba, exercise))
     expect(exercise.user_id).to eq(@kuba.id)
   end
 end
