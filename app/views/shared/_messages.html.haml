@@ -1,4 +1,4 @@
 .col-md-12
   - flash.each do |key, msg|
-    %div{class: "alert alert-#{key == "notice" ? "success" : "danger"}"}
+    %div{class: "alert alert-#{key == "notice" || key == "success"? "success" : "danger"}"}
       = msg
