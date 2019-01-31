@@ -16,9 +16,7 @@ RSpec.feature 'Creating excercise' do
   scenario "with valid inputs" do
     fill_in "Duration", with: 70
     fill_in "Workout details", with: "Swimming"
-    page.select '2018', from: 'exercise[workout_date(1i)]'
-    page.select 'December', from: 'exercise[workout_date(2i)]'
-    page.select '31', from: 'exercise[workout_date(3i)]'
+    fill_in "Activity date", with: "31/12/2018"
 
     click_button "Create Exercise"
 
@@ -34,6 +32,7 @@ RSpec.feature 'Creating excercise' do
 
     fill_in "Duration", with: ""
     fill_in "Workout details", with: ""
+    fill_in "Activity date", with: ""
 
     click_button "Create Exercise"
 
