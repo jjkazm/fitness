@@ -1,1 +1,5 @@
 = link_to "New workout", new_user_exercise_path, method: :get, class:"btn btn-success"
+
+.col-md-12
+  %div.exercises
+    = render @exercises

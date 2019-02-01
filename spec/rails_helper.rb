@@ -35,9 +35,14 @@ RSpec.configure do |config|
   # Use factory bot methods
   config.include FactoryBot::Syntax::Methods
 
+
+
+  # Use warden helpers
+  config.include Warden::Test::Helpers
+
   # Use devise methods
   config.include Devise::Test::IntegrationHelpers, type: :feature
-  
+
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
