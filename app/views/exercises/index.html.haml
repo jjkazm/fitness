@@ -1,5 +1,9 @@
 = link_to "New workout", new_user_exercise_path, method: :get, class:"btn btn-success"
 
 .col-md-12
-  %div.exercises
-    = render @exercises
+  - if current_user.exercises.any?
+    %div.exercises
+      = render @exercises
+  - else
+    %div
+      No workouts yet.

@@ -14,9 +14,6 @@ RSpec.feature 'Listing workouts' do
 
     click_link "My Lounge"
 
-    puts current_path
-    puts @kuba.id
-
     expect(page).to have_content(@ex1.duration_in_min)
     expect(page).to have_content(@ex1.workout)
     expect(page).to have_content(@ex1.workout_date)
@@ -30,5 +27,18 @@ RSpec.feature 'Listing workouts' do
     expect(page).not_to have_content(@ex3.duration_in_min)
     expect(page).not_to have_content(@ex3.workout)
     expect(page).not_to have_content(@ex3.workout_date)
+  end
+
+  scenario "doesn't display workouts for user with not workouts" do
+    @kuba.exercises.delete_all
+    visit "/"
+
+    click_link "My Lounge"
+
+    expect(page).to have_content("No workouts yet.")
+    expect(page).not_to have_content(@ex1.duration_in_min)
+    expect(page).not_to have_content(@ex1.workout)
+    expect(page).not_to have_content(@ex1.workout_date)
+
   end
 end
