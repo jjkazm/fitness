@@ -17,4 +17,5 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker
+//= require d3
 //= require_tree .
