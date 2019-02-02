@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/stympy/faker.git
+  revision: 94cb165caadde8356fdda0ef0610ee2273956ae1
+  branch: master
+  specs:
+    faker (1.9.1)
+      i18n (>= 0.7)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -287,6 +295,7 @@ DEPENDENCIES
   d3-rails
   devise
   factory_bot_rails
+  faker!
   guard
   guard-rspec
   haml (~> 5.0, >= 5.0.4)
