@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.feature 'Listing memebers' do
   before do
-    @john = User.create(first_name: "John", last_name: "Doe", email: "john@doe.com", password: "password")
-    @lara = User.create(first_name: "Lara", last_name: "Doe", email: "lara@doe.com", password: "password")
+    @john = create(:user)
+    @lara = create(:user)
   end
 
   scenario "shows a list of registered members" do

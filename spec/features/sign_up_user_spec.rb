@@ -35,14 +35,13 @@ RSpec.feature 'Sign up user' do
       click_button "Signup"
 
 
-      expect(page).not_to have_content "First name can't be blank"
-      expect(page).not_to have_content "Last name can't be blank"
+      expect(page).to have_content "First name can't be blank"
+      expect(page).to have_content "Last name can't be blank"
       expect(page).not_to have_content "Welcome! You have signed up successfully."
       expect(page).to have_link("Signup")
       expect(page).to have_link("Log in")
       expect(page).not_to have_link("Sign out")
       expect(page).not_to have_link("Signed in as kuba@wp.pl")
-      expect(page).to have_content("Kuba Doe")
   end
 
 
