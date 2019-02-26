@@ -12,3 +12,7 @@
         Duration:
       .col-md-9
         = exercise.duration_in_min
+    .row
+      .col-md-3
+      .col-md-9
+        = link_to "Edit", edit_user_exercise_path(current_user, exercise)

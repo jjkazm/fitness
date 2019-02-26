@@ -1,0 +1,8 @@
+= simple_form_for([current_user, @exercise],  wrapper: :horizontal_form) do |f|
+  = f.error_notification
+  = f.input :duration_in_min
+  = f.input :workout, label: "Workout details"
+  = f.input :workout_date, label: "Activity date", as: :string,
+          input_html: { class: "datepicker", autocomplete: 'off' }
+  = f.button :submit, class: "btn-primary"
+= link_to "Back", user_exercises_path(current_user)
