@@ -6,7 +6,7 @@ RSpec.feature 'Sign up user' do
 
       click_link 'Signup'
 
-      fill_in "Fist name", with: "Kuba"
+      fill_in "First name", with: "Kuba"
       fill_in "Last name", with: "Doe"
       fill_in "Email", with: "kuba@wp.pl"
       fill_in "Password", with: "haslo123"
