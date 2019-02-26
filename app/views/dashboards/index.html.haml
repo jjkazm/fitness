@@ -5,6 +5,7 @@
   .row
     .col-md-10
       %h2 List of Members
+  = paginate @athletes, class: "apple_pagination"
   .row
     - @athletes.each do |athlete|
       .co-md-10.well.member

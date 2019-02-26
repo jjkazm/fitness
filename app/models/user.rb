@@ -8,6 +8,8 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
 
+  paginates_per 10
+
   def full_name
     [first_name, last_name].join(" ")
   end

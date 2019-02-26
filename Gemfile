@@ -20,6 +20,8 @@ gem 'jquery-rails'
 # Use datepicker
 gem 'bootstrap-datepicker-rails'
 
+gem 'kaminari', '~> 1.1', '>= 1.1.1'
+
 # Use d3 for graphs
 gem "d3-rails"
 
