@@ -10,8 +10,12 @@ User.destroy_all
 
 emails = ["kuba@wp.pl", "agatka@wp.pl", "jurek@wp.pl"]
 
-emails.map { |address| User.create(email: address, password: "haslo123" )}
-10.times { User.create(email: Faker::Internet.unique.email, password: "haslo123" )}
+emails.map { |address| User.create(email: address, password: "haslo123",
+              first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)}
+10.times { User.create(email: Faker::Internet.unique.email, password: "haslo123",
+          first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)}
+
+
 
 workouts = ["Jogging", "Swimming", "Weightlifitng", "Karate"]
 
