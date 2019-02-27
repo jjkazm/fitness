@@ -13,4 +13,8 @@ class User < ApplicationRecord
   def full_name
     [first_name, last_name].join(" ")
   end
+
+  def self.search_by_name(name)
+
+  end
 end
