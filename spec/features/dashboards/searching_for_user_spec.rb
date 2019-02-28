@@ -14,6 +14,6 @@ RSpec.feature 'Searching for users' do
 
     expect(page).to have_content(@john.full_name)
     expect(page).to have_content(@alice.full_name)
-    expect(current_path).to eq("dashboards/search")
+    expect(current_path).to eq("/dashboards/search")
   end
 end

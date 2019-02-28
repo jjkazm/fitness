@@ -14,8 +14,14 @@ class User < ApplicationRecord
     [first_name, last_name].join(" ")
   end
 
-  def self.search_by_name(name)
-    where('first_name LIKE ? or last_name LIKE ?', name, name).order(:first_name)
+  def self.search_by_single_name(single_name)
+    where('first_name LIKE ? or last_name LIKE ?', single_name, single_name)
+      .to_a
+  end
+
+  def self.search_by_name(input)
+    names = input.split(' ')
+    names.reduce([]){ |sum, word| sum << search_by_single_name(word) }.flatten.uniq
   end
 
 
