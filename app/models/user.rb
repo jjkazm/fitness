@@ -15,6 +15,8 @@ class User < ApplicationRecord
   end
 
   def self.search_by_name(name)
-
+    where('first_name LIKE ? or last_name LIKE ?', name, name).order(:first_name)
   end
+
+
 end

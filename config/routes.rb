@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root "dashboards#index"
 
   resources :dashboards, only: [:index] do
-    post :search, to "dashboards#search"
+    collection do      
+      post :search, to: "dashboards#search"
+    end
   end
 
   resources :users do
